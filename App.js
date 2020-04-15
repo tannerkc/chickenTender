@@ -1,5 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Image, Animated, PanResponder } from 'react-native';
+import React, { useState, useEffect } from "react";
+
+import { StyleSheet, Text, View, Dimensions, Image, Animated, PanResponder, SafeAreaView, ScrollView  } from 'react-native';
+
+import { Geo, GeoExpo, ExpoLoc } from './components';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
@@ -177,10 +180,22 @@ export default class App extends React.Component {
        <View style={{ flex: 1 }}>
         {this.renderLogos()}
        </View>
-       <View style={{ height: 80, poition: 'fixed', color: 'white', bottom: 0, left: 0, width: SCREEN_WIDTH }}>
-
-        <Text style={{ textAlign: 'center', color: 'grey', fontSize: 20, marginTop: 30 }}>Matching with Nicolette</Text>
+       <View
+       style={{ height: 80, poition: 'fixed', color: 'white', bottom: 0, left: 0, width: SCREEN_WIDTH }}>
+        <Text
+        style={{ textAlign: 'center', color: 'grey', fontSize: 20, marginTop: 30 }}>
+        Matching with Nicolette
+        </Text>
        </View>
+       <View>
+       </View>
+         <SafeAreaView style={styles.container}>
+          <ScrollView style={styles.scrollView}>
+          <Geo />
+          <GeoExpo />
+          <ExpoLoc />
+          </ScrollView>
+        </SafeAreaView>
       </View>
     );
   }
