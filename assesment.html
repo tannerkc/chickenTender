@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+<script>
+
+const solution = (angles) => {
+
+
+    let i;
+    let x;
+    if(angles[0]=='>'){
+      angles = '<'+angles;
+    }
+    else if(angles[-1]=='<'){
+      angles = angles+'>';
+    }
+
+    let countRight = angles.match(/>/g);
+    let countLeft = angles.match(/</g);
+
+    if(countRight){
+        countRight = countRight.length
+    }
+    else if(countLeft){
+        countLeft = countLeft.length
+    }
+
+    console.log(countRight);
+    console.log(countLeft);
+
+    if (countLeft < countRight){
+      let addCount = countRight - countLeft;
+      console.log(addCount);
+
+      for(x=0;x<addCount;x++){
+        angles = '<'+angles;
+      }
+      countRight = angles.match(/>/g).length;
+      countLeft = angles.match(/</g).length;
+      console.log(countRight);
+      console.log(countLeft);
+    }
+
+      else if(countRight < countLeft){
+        let addCount = countLeft - countRight;
+        console.log(addCount);
+
+        for(x=0;x<addCount;x++){
+          angles = angles+'>';
+        }
+
+      }
+
+
+
+  console.log(angles);
+};
+
+solution("<<><>");
+solution("><");
+</script>
+
+</body>
+</html>
