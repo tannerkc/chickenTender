@@ -81,7 +81,7 @@ const Cards = () =>{
 
           const url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants&location="+coord+"&maxprice=2&radius=15000&type=restaurant&opennow=true"
 
-          const key = "&key=AIzaSyCtRLQEjh81uHbBnwgSNpKKOx8PQEpEgho"
+          const key = "&key=XXXX"
           const photosUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="
 
           axios({
